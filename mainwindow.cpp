@@ -2,9 +2,11 @@
 #include "Image_Class.h"
 #include "./ui_mainwindow.h"
 #include <QMessageBox>
+#include <QProgressBar>
 #include <QPixmap>
 #include <Windows.h>
 #include <QFileDialog>
+#include <QColorDialog>
 #include <random>
 #include <QDir>
 
@@ -14,15 +16,18 @@ using namespace std;
 bool isShow = false;
 bool isSkew = false;
 bool isResize = false;
+bool isFrame = false;
 bool isRotate = false;
 bool isBright = false;
 bool isBlur = false;
 bool isFlip = false;
+bool isOil = false;
 bool isMerge = false;
 bool isCrop = false;
+bool isSmoke = false;
 int Angle = 0;
 Image image, copy_Image, merge_image;
-QString file_name;
+QString file_name, file_merge;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -32,8 +37,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->FiltersGroup_1->hide();
     ui->skewFrame->hide();
     ui->cropFrame->hide();
+    ui->oilFrame->hide();
+    ui->smokeFrame->hide();
+    ui->progressBar->setVisible(false);
     ui->ResizeFrame->hide();
-    ui->BlurFrame->show();
+    ui->BlurFrame->hide();
+    ui->FrameFrame->hide();
     ui->rotateFrame->hide();
     ui->brightFrame->hide();
     ui->mergeFrame->hide();
@@ -63,18 +72,45 @@ void MainWindow::on_FiltersButton_clicked()
 
 void MainWindow::on_loadImageButton_clicked()
 {
-    file_name = QFileDialog::getOpenFileName(this, "Select image", QDir::homePath(), "Image Files (*.jpg *.tga *.png *.bmp)");
-    QPixmap pix(file_name);
-    image.loadNewImage(file_name.toStdString());
-    int w = ui->Beforelabel->width();
-    int h = ui->Beforelabel->height();
-    ui->Beforelabel->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
-    ui->AfterLabel->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
+    try {
+        file_name = QFileDialog::getOpenFileName(this, "Select image", QDir::homePath(), "Image Files (*.jpg *.tga *.png *.bmp)");
+        QPixmap pix(file_name);
+        image.loadNewImage(file_name.toStdString());
+        int w = ui->Beforelabel->width();
+        int h = ui->Beforelabel->height();
+        ui->Beforelabel->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
+        ui->AfterLabel->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
+    } catch (...) {
+
+    }
+
 }
 
 
 void MainWindow::on_grayButton_clicked()
 {
+    isSkew = false;
+    isResize = false;
+    isSmoke = false;
+    isOil = false;
+    isBlur = false;
+    isBright = false;
+    isFrame = false;
+    isRotate = false;
+    isFlip = false;
+    isMerge = false;
+    isCrop = false;
+    ui->oilFrame->hide();
+    ui->BlurFrame->hide();
+    ui->cropFrame->hide();
+    ui->skewFrame->hide();
+    ui->smokeFrame->hide();
+    ui->ResizeFrame->hide();
+    ui->FrameFrame->hide();
+    ui->rotateFrame->hide();
+    ui->flipFrame->hide();
+    ui->mergeFrame->hide();
+    ui->brightFrame->hide();
     Image grayImage = image;
     for (int width = 0; width < grayImage.width; ++width) {
         for (int height = 0; height < grayImage.height; ++height) {
@@ -95,22 +131,29 @@ void MainWindow::on_grayButton_clicked()
     int h = ui->AfterLabel->height();
     ui->AfterLabel->setPixmap(img.scaled(w, h, Qt::KeepAspectRatio)); }
 
+
 void MainWindow::on_doneBtn_clicked()
 {
     image = copy_Image;
     Angle = 0;
     isSkew = false;
     isResize = false;
+    isSmoke = false;
+    isOil = false;
     isBlur = false;
     isBright = false;
+    isFrame = false;
     isRotate = false;
     isFlip = false;
     isMerge = false;
     isCrop = false;
+    ui->oilFrame->hide();
     ui->BlurFrame->hide();
     ui->cropFrame->hide();
     ui->skewFrame->hide();
+    ui->smokeFrame->hide();
     ui->ResizeFrame->hide();
+    ui->FrameFrame->hide();
     ui->rotateFrame->hide();
     ui->flipFrame->hide();
     ui->mergeFrame->hide();
@@ -120,6 +163,28 @@ void MainWindow::on_doneBtn_clicked()
 
 void MainWindow::on_BaWButton_clicked()
 {
+    isSkew = false;
+    isResize = false;
+    isSmoke = false;
+    isOil = false;
+    isBlur = false;
+    isBright = false;
+    isFrame = false;
+    isRotate = false;
+    isFlip = false;
+    isMerge = false;
+    isCrop = false;
+    ui->oilFrame->hide();
+    ui->BlurFrame->hide();
+    ui->cropFrame->hide();
+    ui->skewFrame->hide();
+    ui->smokeFrame->hide();
+    ui->ResizeFrame->hide();
+    ui->FrameFrame->hide();
+    ui->rotateFrame->hide();
+    ui->flipFrame->hide();
+    ui->mergeFrame->hide();
+    ui->brightFrame->hide();
     Image blackAwhite = image;
     for (int i = 0; i < blackAwhite.width; ++i) {
         for (int j = 0; j < blackAwhite.height; ++j) {
@@ -151,6 +216,28 @@ void MainWindow::on_BaWButton_clicked()
 
 void MainWindow::on_invertButton_clicked()
 {
+    isSkew = false;
+    isResize = false;
+    isSmoke = false;
+    isOil = false;
+    isBlur = false;
+    isBright = false;
+    isFrame = false;
+    isRotate = false;
+    isFlip = false;
+    isMerge = false;
+    isCrop = false;
+    ui->oilFrame->hide();
+    ui->BlurFrame->hide();
+    ui->cropFrame->hide();
+    ui->skewFrame->hide();
+    ui->smokeFrame->hide();
+    ui->ResizeFrame->hide();
+    ui->FrameFrame->hide();
+    ui->rotateFrame->hide();
+    ui->flipFrame->hide();
+    ui->mergeFrame->hide();
+    ui->brightFrame->hide();
     Image invertImage = image;
     for (int i = 0; i < invertImage.width; ++i) {
         for (int j = 0; j < invertImage.height; ++j) {
@@ -172,6 +259,28 @@ void MainWindow::on_invertButton_clicked()
 
 void MainWindow::on_sunButton_clicked()
 {
+    isSkew = false;
+    isResize = false;
+    isSmoke = false;
+    isOil = false;
+    isBlur = false;
+    isBright = false;
+    isFrame = false;
+    isRotate = false;
+    isFlip = false;
+    isMerge = false;
+    isCrop = false;
+    ui->oilFrame->hide();
+    ui->BlurFrame->hide();
+    ui->cropFrame->hide();
+    ui->skewFrame->hide();
+    ui->smokeFrame->hide();
+    ui->ResizeFrame->hide();
+    ui->FrameFrame->hide();
+    ui->rotateFrame->hide();
+    ui->flipFrame->hide();
+    ui->mergeFrame->hide();
+    ui->brightFrame->hide();
     Image sunImage = image;
     for (int i = 0; i < sunImage.width; ++i) {
         for (int j = 0; j < sunImage.height; ++j) {
@@ -193,6 +302,28 @@ void MainWindow::on_sunButton_clicked()
 
 void MainWindow::on_infraredButton_clicked()
 {
+    isSkew = false;
+    isResize = false;
+    isSmoke = false;
+    isOil = false;
+    isBlur = false;
+    isBright = false;
+    isFrame = false;
+    isRotate = false;
+    isFlip = false;
+    isMerge = false;
+    isCrop = false;
+    ui->oilFrame->hide();
+    ui->BlurFrame->hide();
+    ui->cropFrame->hide();
+    ui->skewFrame->hide();
+    ui->smokeFrame->hide();
+    ui->ResizeFrame->hide();
+    ui->FrameFrame->hide();
+    ui->rotateFrame->hide();
+    ui->flipFrame->hide();
+    ui->mergeFrame->hide();
+    ui->brightFrame->hide();
     Image infraredImage = image;
     for (int i = 0; i < infraredImage.width; ++i) {
         for (int j = 0; j < infraredImage.height; ++j) {
@@ -213,6 +344,28 @@ void MainWindow::on_infraredButton_clicked()
 
 void MainWindow::on_TVButton_clicked()
 {
+    isSkew = false;
+    isResize = false;
+    isSmoke = false;
+    isOil = false;
+    isBlur = false;
+    isBright = false;
+    isFrame = false;
+    isRotate = false;
+    isFlip = false;
+    isMerge = false;
+    isCrop = false;
+    ui->oilFrame->hide();
+    ui->BlurFrame->hide();
+    ui->cropFrame->hide();
+    ui->skewFrame->hide();
+    ui->smokeFrame->hide();
+    ui->ResizeFrame->hide();
+    ui->FrameFrame->hide();
+    ui->rotateFrame->hide();
+    ui->flipFrame->hide();
+    ui->mergeFrame->hide();
+    ui->brightFrame->hide();
     Image TVImage = image;
     random_device rd;
     mt19937 gen(rd());
@@ -256,6 +409,26 @@ void MainWindow::on_TVButton_clicked()
 
 void MainWindow::on_skewButton_clicked()
 {
+    isResize = false;
+    isSmoke = false;
+    isOil = false;
+    isBlur = false;
+    isBright = false;
+    isFrame = false;
+    isRotate = false;
+    isFlip = false;
+    isMerge = false;
+    isCrop = false;
+    ui->oilFrame->hide();
+    ui->BlurFrame->hide();
+    ui->cropFrame->hide();
+    ui->smokeFrame->hide();
+    ui->ResizeFrame->hide();
+    ui->FrameFrame->hide();
+    ui->rotateFrame->hide();
+    ui->flipFrame->hide();
+    ui->mergeFrame->hide();
+    ui->brightFrame->hide();
     if (isSkew){
         ui->skewFrame->hide();
         isSkew = false;
@@ -362,6 +535,26 @@ void MainWindow::on_applySkewBtn_clicked()
 
 void MainWindow::on_resizeButton_clicked()
 {
+    isSkew = false;
+    isSmoke = false;
+    isOil = false;
+    isBlur = false;
+    isBright = false;
+    isFrame = false;
+    isRotate = false;
+    isFlip = false;
+    isMerge = false;
+    isCrop = false;
+    ui->oilFrame->hide();
+    ui->BlurFrame->hide();
+    ui->cropFrame->hide();
+    ui->skewFrame->hide();
+    ui->smokeFrame->hide();
+    ui->FrameFrame->hide();
+    ui->rotateFrame->hide();
+    ui->flipFrame->hide();
+    ui->mergeFrame->hide();
+    ui->brightFrame->hide();
     if (isResize){
         ui->ResizeFrame->hide();
         isResize = false;
@@ -407,6 +600,28 @@ void MainWindow::on_applyResizeBtn_clicked()
 
 void MainWindow::on_purpleButton_clicked()
 {
+    isSkew = false;
+    isResize = false;
+    isSmoke = false;
+    isOil = false;
+    isBlur = false;
+    isBright = false;
+    isFrame = false;
+    isRotate = false;
+    isFlip = false;
+    isMerge = false;
+    isCrop = false;
+    ui->oilFrame->hide();
+    ui->BlurFrame->hide();
+    ui->cropFrame->hide();
+    ui->skewFrame->hide();
+    ui->smokeFrame->hide();
+    ui->ResizeFrame->hide();
+    ui->FrameFrame->hide();
+    ui->rotateFrame->hide();
+    ui->flipFrame->hide();
+    ui->mergeFrame->hide();
+    ui->brightFrame->hide();
     Image purpleImage = image;
     for (int i = 0; i < purpleImage.width; ++i) {
         for (int j = 0; j < purpleImage.height; ++j) {
@@ -428,6 +643,26 @@ void MainWindow::on_purpleButton_clicked()
 
 void MainWindow::on_rotateButton_clicked()
 {
+    isSkew = false;
+    isResize = false;
+    isSmoke = false;
+    isOil = false;
+    isBlur = false;
+    isBright = false;
+    isFrame = false;
+    isFlip = false;
+    isMerge = false;
+    isCrop = false;
+    ui->oilFrame->hide();
+    ui->BlurFrame->hide();
+    ui->cropFrame->hide();
+    ui->skewFrame->hide();
+    ui->smokeFrame->hide();
+    ui->ResizeFrame->hide();
+    ui->FrameFrame->hide();
+    ui->flipFrame->hide();
+    ui->mergeFrame->hide();
+    ui->brightFrame->hide();
     if (isRotate){
         ui->rotateFrame->hide();
         isRotate = false;
@@ -489,6 +724,26 @@ void MainWindow::on_add90Btn_clicked()
 
 void MainWindow::on_brightnessButton_clicked()
 {
+    isSkew = false;
+    isResize = false;
+    isSmoke = false;
+    isOil = false;
+    isBlur = false;
+    isFrame = false;
+    isRotate = false;
+    isFlip = false;
+    isMerge = false;
+    isCrop = false;
+    ui->oilFrame->hide();
+    ui->BlurFrame->hide();
+    ui->cropFrame->hide();
+    ui->skewFrame->hide();
+    ui->smokeFrame->hide();
+    ui->ResizeFrame->hide();
+    ui->FrameFrame->hide();
+    ui->rotateFrame->hide();
+    ui->flipFrame->hide();
+    ui->mergeFrame->hide();
     if (isBright){
         ui->brightFrame->hide();
         isBright = false;
@@ -521,6 +776,26 @@ void MainWindow::on_applyBrightnessBtn_clicked()
 
 void MainWindow::on_flipButton_clicked()
 {
+    isSkew = false;
+    isResize = false;
+    isSmoke = false;
+    isOil = false;
+    isBlur = false;
+    isBright = false;
+    isFrame = false;
+    isRotate = false;
+    isMerge = false;
+    isCrop = false;
+    ui->oilFrame->hide();
+    ui->BlurFrame->hide();
+    ui->cropFrame->hide();
+    ui->skewFrame->hide();
+    ui->smokeFrame->hide();
+    ui->ResizeFrame->hide();
+    ui->FrameFrame->hide();
+    ui->rotateFrame->hide();
+    ui->mergeFrame->hide();
+    ui->brightFrame->hide();
     if(isFlip){
         ui->flipFrame->hide();
         isFlip = false;
@@ -584,6 +859,26 @@ void MainWindow::on_HFlipBtn_clicked()
 
 void MainWindow::on_mergeButton_clicked()
 {
+    isSkew = false;
+    isResize = false;
+    isSmoke = false;
+    isOil = false;
+    isBlur = false;
+    isBright = false;
+    isFrame = false;
+    isRotate = false;
+    isFlip = false;
+    isCrop = false;
+    ui->oilFrame->hide();
+    ui->BlurFrame->hide();
+    ui->cropFrame->hide();
+    ui->skewFrame->hide();
+    ui->smokeFrame->hide();
+    ui->ResizeFrame->hide();
+    ui->FrameFrame->hide();
+    ui->rotateFrame->hide();
+    ui->flipFrame->hide();
+    ui->brightFrame->hide();
     if(isMerge){
         ui->mergeFrame->hide();
         isMerge = false;
@@ -596,11 +891,16 @@ void MainWindow::on_mergeButton_clicked()
 
 Image newImage(){
     Image newImg;
-    file_name = QFileDialog::getOpenFileName(nullptr, "Select image", QDir::homePath(), "Image Files (*.jpg *.tga *.png *.bmp)");
-    QPixmap pix(file_name);
-    newImg.loadNewImage(file_name.toStdString());
+    try {
+        file_merge = QFileDialog::getOpenFileName(nullptr, "Select image", QDir::homePath(), "Image Files (*.jpg *.tga *.png *.bmp)");
+        QPixmap pix(file_merge);
+        newImg.loadNewImage(file_merge.toStdString());
+    } catch (...) {
+    }
     return newImg;
+
 }
+
 
 void MainWindow::on_mergeLoadBtn_clicked()
 {
@@ -610,75 +910,99 @@ void MainWindow::on_mergeLoadBtn_clicked()
 
 void MainWindow::on_applyMergeBtn_clicked()
 {
-    Image mainImage = image;
-    if(ui->resizeMergeButton->isChecked()){
-        int width, height;
-        width = max(merge_image.width, mainImage.width);
-        height = max(mainImage.height, merge_image.height);
-        Image resize1(width, height);
-        Image resize2(width, height);
-        double ratioW, ratioH;
-        ratioH = double (merge_image.height)/height;
-        ratioW = double (merge_image.width)/width;
+    if(file_merge != nullptr){
+        Image mainImage = image;
+        if(ui->resizeMergeButton->isChecked()){
+            int width, height;
+            width = max(merge_image.width, mainImage.width);
+            height = max(mainImage.height, merge_image.height);
+            Image resize1(width, height);
+            Image resize2(width, height);
+            double ratioW, ratioH;
+            ratioH = double (merge_image.height)/height;
+            ratioW = double (merge_image.width)/width;
 
-        double ratioW1, ratioH1;
-        ratioH1 = double (mainImage.height)/height;
-        ratioW1 = double (mainImage.width)/width;
+            double ratioW1, ratioH1;
+            ratioH1 = double (mainImage.height)/height;
+            ratioW1 = double (mainImage.width)/width;
 
-        for (int i = 0; i < width; ++i) {
-            for (int j = 0; j < height; ++j) {
-                int x = round(i * ratioW);
-                int y = round(j * ratioH);
-                int x1 = round(i * ratioW1);
-                int y1 = round(j * ratioH1);
-                for (int k = 0; k < 3; ++k) {
-                    resize1(i, j, k) = merge_image(x, y, k);
-                    resize2(i, j, k) = mainImage(x1, y1, k);
+            for (int i = 0; i < width; ++i) {
+                for (int j = 0; j < height; ++j) {
+                    int x = round(i * ratioW);
+                    int y = round(j * ratioH);
+                    int x1 = round(i * ratioW1);
+                    int y1 = round(j * ratioH1);
+                    for (int k = 0; k < 3; ++k) {
+                        resize1(i, j, k) = merge_image(x, y, k);
+                        resize2(i, j, k) = mainImage(x1, y1, k);
+                    }
                 }
             }
-        }
-        Image merged(width, height);
-        for (int i = 0; i < width; ++i) {
-            for (int j = 0; j < height; ++j) {
-                for (int k = 0; k < 3; ++k) {
-                    int avg = (resize1(i, j , k) + resize2(i, j, k))/2;
-                    merged(i, j, k) = avg;
+            Image merged(width, height);
+            for (int i = 0; i < width; ++i) {
+                for (int j = 0; j < height; ++j) {
+                    for (int k = 0; k < 3; ++k) {
+                        int avg = (resize1(i, j , k) + resize2(i, j, k))/2;
+                        merged(i, j, k) = avg;
+                    }
                 }
             }
+            copy_Image = merged;
+            QImage qImage(merged.imageData, merged.width, merged.height, merged.width * 3, QImage::Format_RGB888);
+            QPixmap img = QPixmap::fromImage(qImage);
+            int w = ui->AfterLabel->width();
+            int h = ui->AfterLabel->height();
+            ui->AfterLabel->setPixmap(img.scaled(w, h, Qt::KeepAspectRatio));
         }
-        copy_Image = merged;
-        QImage qImage(merged.imageData, merged.width, merged.height, merged.width * 3, QImage::Format_RGB888);
-        QPixmap img = QPixmap::fromImage(qImage);
-        int w = ui->AfterLabel->width();
-        int h = ui->AfterLabel->height();
-        ui->AfterLabel->setPixmap(img.scaled(w, h, Qt::KeepAspectRatio));
-    }
-    else if (ui->cropMergeButton->isChecked()){
-        int width, height, cropHeight, cropWidth;
-        width = min(mainImage.width, merge_image.width);
-        height = min(mainImage.height, merge_image.height);
+        else if (ui->cropMergeButton->isChecked()){
+            int width, height, cropHeight, cropWidth;
+            width = min(mainImage.width, merge_image.width);
+            height = min(mainImage.height, merge_image.height);
 
-        Image merged(width, height);
-        for (int i = 0; i < width; ++i) {
-            for (int j = 0; j < height; ++j) {
-                for (int k = 0; k < 3; ++k) {
-                    int avg = (mainImage(i, j , k) + merge_image(i, j, k))/2;
-                    merged(i, j, k) = avg;
+            Image merged(width, height);
+            for (int i = 0; i < width; ++i) {
+                for (int j = 0; j < height; ++j) {
+                    for (int k = 0; k < 3; ++k) {
+                        int avg = (mainImage(i, j , k) + merge_image(i, j, k))/2;
+                        merged(i, j, k) = avg;
+                    }
                 }
             }
+            copy_Image = merged;
+            QImage qImage(merged.imageData, merged.width, merged.height, merged.width * 3, QImage::Format_RGB888);
+            QPixmap img = QPixmap::fromImage(qImage);
+            int w = ui->AfterLabel->width();
+            int h = ui->AfterLabel->height();
+            ui->AfterLabel->setPixmap(img.scaled(w, h, Qt::KeepAspectRatio));
         }
-        copy_Image = merged;
-        QImage qImage(merged.imageData, merged.width, merged.height, merged.width * 3, QImage::Format_RGB888);
-        QPixmap img = QPixmap::fromImage(qImage);
-        int w = ui->AfterLabel->width();
-        int h = ui->AfterLabel->height();
-        ui->AfterLabel->setPixmap(img.scaled(w, h, Qt::KeepAspectRatio));
     }
 }
 
 
 void MainWindow::on_detectButton_clicked()
 {
+    isSkew = false;
+    isResize = false;
+    isSmoke = false;
+    isOil = false;
+    isBlur = false;
+    isBright = false;
+    isFrame = false;
+    isRotate = false;
+    isFlip = false;
+    isMerge = false;
+    isCrop = false;
+    ui->oilFrame->hide();
+    ui->BlurFrame->hide();
+    ui->cropFrame->hide();
+    ui->skewFrame->hide();
+    ui->smokeFrame->hide();
+    ui->ResizeFrame->hide();
+    ui->FrameFrame->hide();
+    ui->rotateFrame->hide();
+    ui->flipFrame->hide();
+    ui->mergeFrame->hide();
+    ui->brightFrame->hide();
     bool isEdge = false;
     Image detect = image;
     for (int i = 0; i < detect.width; ++i) {
@@ -726,11 +1050,33 @@ void MainWindow::on_detectButton_clicked()
     int w = ui->AfterLabel->width();
     int h = ui->AfterLabel->height();
     ui->AfterLabel->setPixmap(img.scaled(w, h, Qt::KeepAspectRatio));
+
+
 }
 
 
 void MainWindow::on_cropButton_clicked()
 {
+    isSkew = false;
+    isResize = false;
+    isSmoke = false;
+    isOil = false;
+    isBlur = false;
+    isBright = false;
+    isFrame = false;
+    isRotate = false;
+    isFlip = false;
+    isMerge = false;
+    ui->oilFrame->hide();
+    ui->BlurFrame->hide();
+    ui->skewFrame->hide();
+    ui->smokeFrame->hide();
+    ui->ResizeFrame->hide();
+    ui->FrameFrame->hide();
+    ui->rotateFrame->hide();
+    ui->flipFrame->hide();
+    ui->mergeFrame->hide();
+    ui->brightFrame->hide();
     if(isCrop){
         ui->cropFrame->hide();
         isCrop = false;
@@ -750,12 +1096,8 @@ void MainWindow::on_applyCropBtn_clicked()
     int cropWidth = ui->Wspin->value();
     int cropHeight = ui->Hspin->value();
     Image cropped(cropWidth, cropHeight);
-    if (x < 0 || y < 0 || x > crop.width || y > crop.height){
-        QMessageBox msgBox;
-        msgBox.setWindowTitle("Error");
-        msgBox.setText("Please Enter valid region.");
-        msgBox.exec();
-    } else {
+
+    try {
         int row = 0, column = 0;
         for (int i = 0; i < cropWidth; ++i) {
             for (int j = 0; j < cropHeight; ++j) {
@@ -764,13 +1106,19 @@ void MainWindow::on_applyCropBtn_clicked()
                 }
             }
         }
+        copy_Image = cropped;
+        QImage qImage(cropped.imageData, cropped.width, cropped.height, cropped.width * 3, QImage::Format_RGB888);
+        QPixmap img = QPixmap::fromImage(qImage);
+        int w = ui->AfterLabel->width();
+        int h = ui->AfterLabel->height();
+        ui->AfterLabel->setPixmap(img.scaled(w, h, Qt::KeepAspectRatio));
+    } catch (...) {
+        QMessageBox msgBox;
+        msgBox.setWindowTitle("Error");
+        msgBox.setText("Please Enter valid region.");
+        msgBox.exec();
     }
-    copy_Image = cropped;
-    QImage qImage(cropped.imageData, cropped.width, cropped.height, cropped.width * 3, QImage::Format_RGB888);
-    QPixmap img = QPixmap::fromImage(qImage);
-    int w = ui->AfterLabel->width();
-    int h = ui->AfterLabel->height();
-    ui->AfterLabel->setPixmap(img.scaled(w, h, Qt::KeepAspectRatio));
+
 }
 
 
@@ -791,13 +1139,20 @@ void MainWindow::on_brightValue_valueChanged(int values)
     int w = ui->AfterLabel->width();
     int h = ui->AfterLabel->height();
     ui->AfterLabel->setPixmap(img.scaled(w, h, Qt::KeepAspectRatio));
+
 }
 
 
 void MainWindow::on_blurSlider_valueChanged(int value)
 {
+    ui->progressBar->setVisible(true);
+    ui->progressBar->setMinimum(0);
+    ui->progressBar->setMaximum(100);
     Image blur = image;
     int blurRadius = value;
+    for( int i = 0; i <50; ++i ) {
+        ui->progressBar->setValue(i);
+    }
 
     vector < vector <int> > tRed(blur.width, vector <int> (blur.height));
     vector < vector <int> > tGreen(blur.width, vector <int> (blur.height));
@@ -847,22 +1202,37 @@ void MainWindow::on_blurSlider_valueChanged(int value)
     int w = ui->AfterLabel->width();
     int h = ui->AfterLabel->height();
     ui->AfterLabel->setPixmap(img.scaled(w, h, Qt::KeepAspectRatio));
-}
+    for( int i = 50; i <100; ++i ) {
+        ui->progressBar->setValue(i);
+    }
 
-void MainWindow::on_blurButton_clicked()
-{
-
-}
-
-
-void MainWindow::on_oilButton_clicked()
-{
+    ui->progressBar->setVisible(false);
 
 }
 
 
-void MainWindow::on_blursButton_clicked()
+void MainWindow::on_blurBtn_clicked()
 {
+    isSkew = false;
+    isResize = false;
+    isSmoke = false;
+    isOil = false;
+    isBright = false;
+    isFrame = false;
+    isRotate = false;
+    isFlip = false;
+    isMerge = false;
+    isCrop = false;
+    ui->oilFrame->hide();
+    ui->cropFrame->hide();
+    ui->skewFrame->hide();
+    ui->smokeFrame->hide();
+    ui->ResizeFrame->hide();
+    ui->FrameFrame->hide();
+    ui->rotateFrame->hide();
+    ui->flipFrame->hide();
+    ui->mergeFrame->hide();
+    ui->brightFrame->hide();
     if(isBlur){
         ui->BlurFrame->hide();
         isBlur = false;
@@ -870,5 +1240,644 @@ void MainWindow::on_blursButton_clicked()
         ui->BlurFrame->show();
         isBlur = true;
     }
+}
+
+
+void MainWindow::on_oilButton_clicked()
+{
+    isSkew = false;
+    isResize = false;
+    isSmoke = false;
+    isBlur = false;
+    isBright = false;
+    isFrame = false;
+    isRotate = false;
+    isFlip = false;
+    isMerge = false;
+    isCrop = false;
+    ui->BlurFrame->hide();
+    ui->cropFrame->hide();
+    ui->skewFrame->hide();
+    ui->smokeFrame->hide();
+    ui->ResizeFrame->hide();
+    ui->FrameFrame->hide();
+    ui->rotateFrame->hide();
+    ui->flipFrame->hide();
+    ui->mergeFrame->hide();
+    ui->brightFrame->hide();
+    if(isOil){
+        ui->oilFrame->hide();
+        isOil = false;
+    }else{
+        ui->oilFrame->show();
+        isOil = true;
+    }
+}
+
+
+void MainWindow::on_applyOilBtn_clicked()
+{
+    ui->progressBar->setVisible(true);
+    ui->progressBar->setMinimum(0);
+    ui->progressBar->setMaximum(100);
+    Image oil = image;
+    int radius = ui->radiusOilSlider->value();
+    int intensityLevels = ui->intensitySlider->value();
+    int intensityCount[intensityLevels];
+    int averageR[intensityLevels];
+    int averageG[intensityLevels];
+    int averageB[intensityLevels];
+    for (int i = 0; i < oil.width; ++i) {
+        for (int j = 0; j < oil.height; ++j) {
+
+            fill(intensityCount, intensityCount + intensityLevels, 0);
+            fill(averageR, averageR + intensityLevels, 0);
+            fill(averageG, averageG + intensityLevels, 0);
+            fill(averageB, averageB + intensityLevels, 0);
+
+            for (int k = max(0, i - radius); k <= min(oil.width -1, i + radius); ++k) {
+                for (int l = max(0, j - radius); l <= min(oil.height - 1, j + radius) ; ++l) {
+
+                    int r = oil(k, l, 0);
+                    int g = oil(k, l, 1);
+                    int b = oil(k, l, 2);
+
+                    int curIntensity = (int)((double)((r+g+b)/3)*intensityLevels)/255.0f;
+                    intensityCount[curIntensity]++;
+                    averageR[curIntensity] += r;
+                    averageG[curIntensity] += g;
+                    averageB[curIntensity] += b;
+                }
+            }
+            int curMax = 0;
+            int maxIndex = 0;
+            for (int k = 0; k < intensityLevels; ++k) {
+                if (intensityCount[k] > curMax){
+                    curMax = intensityCount[k];
+                    maxIndex = k;
+                }
+            }
+            try {
+                oil(i, j, 0) = int(averageR[maxIndex] / curMax);
+                oil(i, j, 1) = int(averageG[maxIndex] / curMax);
+                oil(i, j, 2) = int(averageB[maxIndex] / curMax);
+            } catch (...) {
+            }
+
+        }
+    }
+    copy_Image = oil;
+    QImage qImage(oil.imageData, oil.width, oil.height, oil.width * 3, QImage::Format_RGB888);
+    QPixmap img = QPixmap::fromImage(qImage);
+    int w = ui->AfterLabel->width();
+    int h = ui->AfterLabel->height();
+    ui->AfterLabel->setPixmap(img.scaled(w, h, Qt::KeepAspectRatio));
+    for( int i = 50; i <100; ++i ) {
+        ui->progressBar->setValue(i);
+    }
+
+    ui->progressBar->setVisible(false);
+}
+
+
+void MainWindow::on_frameButton_clicked()
+{
+    isSkew = false;
+    isResize = false;
+    isSmoke = false;
+    isOil = false;
+    isBlur = false;
+    isBright = false;
+    isRotate = false;
+    isFlip = false;
+    isMerge = false;
+    isCrop = false;
+    ui->oilFrame->hide();
+    ui->BlurFrame->hide();
+    ui->cropFrame->hide();
+    ui->skewFrame->hide();
+    ui->smokeFrame->hide();
+    ui->ResizeFrame->hide();
+    ui->rotateFrame->hide();
+    ui->flipFrame->hide();
+    ui->mergeFrame->hide();
+    ui->brightFrame->hide();
+    if(isFrame){
+        ui->FrameFrame->hide();
+        isFrame= false;
+    }else{
+        ui->FrameFrame->show();
+        isFrame = true;
+    }
+}
+
+
+void MainWindow::on_simpleTwoFrameBtn_clicked()
+{
+    Image frame = image;
+    QColor color  = QColorDialog::getColor("Select color 1");
+    QColor color2  = QColorDialog::getColor("Select color 2");
+    for (int i = 0; i < frame.width; ++i) {
+        for (int j = 0; j < frame.width/50; ++j) {
+            frame(i, j , 0) = color.red();
+            frame(i, j , 1) = color.green();
+            frame(i, j , 2) = color.blue();
+        }
+    }
+    for (int i = 0; i < frame.width/50; ++i) {
+        for (int j = 0; j < frame.height; ++j) {
+            frame(i, j , 0) = color.red();
+            frame(i, j , 1) = color.green();
+            frame(i, j , 2) = color.blue();
+        }
+    }
+    for (int i = frame.width-1; i > frame.width - frame.width/50; --i) {
+        for (int j = 0; j < frame.height; ++j) {
+            frame(i, j , 0) = color.red();
+            frame(i, j , 1) = color.green();
+            frame(i, j , 2) = color.blue();
+        }
+    }
+    for (int i = 0; i < frame.width; ++i) {
+        for (int j = frame.height - 1; j > frame.height - frame.width/50; --j) {
+            frame(i, j , 0) = color.red();
+            frame(i, j , 1) = color.green();
+            frame(i, j , 2) = color.blue();
+        }
+    }
+
+
+    for (int i = frame.width/50; i < frame.width-frame.width/50; ++i) {
+        for (int j = frame.width/50; j < (frame.width/50*2); ++j) {
+            frame(i, j , 0) = color2.red();
+            frame(i, j , 1) = color2.green();
+            frame(i, j , 2) = color2.blue();
+        }
+    }
+    for (int i = frame.width/50; i < frame.width/50 + frame.width/50; ++i) {
+        for (int j = frame.width/50; j < frame.height-frame.width/50; ++j) {
+            frame(i, j , 0) = color2.red();
+            frame(i, j , 1) = color2.green();
+            frame(i, j , 2) = color2.blue();
+        }
+    }
+    for (int i = frame.width-frame.width/50; i > frame.width - (frame.width/50)*2; --i) {
+        for (int j = frame.width/50; j < frame.height-frame.width/50; ++j) {
+            frame(i, j , 0) = color2.red();
+            frame(i, j , 1) = color2.green();
+            frame(i, j , 2) = color2.blue();
+        }
+    }
+    for (int i = frame.width/50; i < frame.width-frame.width/50; ++i) {
+        for (int j = frame.height - frame.width/50; j > frame.height - (frame.width/50*2); --j) {
+            frame(i, j , 0) = color2.red();
+            frame(i, j , 1) = color2.green();
+            frame(i, j , 2) = color2.blue();
+        }
+    }
+
+    copy_Image = frame;
+    QImage qImage(frame.imageData, frame.width, frame.height, frame.width * 3, QImage::Format_RGB888);
+    QPixmap img = QPixmap::fromImage(qImage);
+    int w = ui->AfterLabel->width();
+    int h = ui->AfterLabel->height();
+    ui->AfterLabel->setPixmap(img.scaled(w, h, Qt::KeepAspectRatio));
+}
+
+
+void MainWindow::on_simpleOneFrameBtn_clicked()
+{
+    QColor color  = QColorDialog::getColor("Select color");
+    Image frame = image;
+    for (int i = 0; i < frame.width; ++i) {
+        for (int j = 0; j < frame.width/30; ++j) {
+            frame(i, j , 0) = color.red();
+            frame(i, j , 1) = color.green();
+            frame(i, j , 2) = color.blue();
+        }
+    }
+    for (int i = 0; i < frame.width/30; ++i) {
+        for (int j = 0; j < frame.height; ++j) {
+            frame(i, j , 0) = color.red();
+            frame(i, j , 1) = color.green();
+            frame(i, j , 2) = color.blue();
+        }
+    }
+    for (int i = frame.width-1; i > frame.width - frame.width/30; --i) {
+        for (int j = 0; j < frame.height; ++j) {
+            frame(i, j , 0) = color.red();
+            frame(i, j , 1) = color.green();
+            frame(i, j , 2) = color.blue();
+        }
+    }
+    for (int i = 0; i < frame.width; ++i) {
+        for (int j = frame.height - 1; j > frame.height - frame.width/30; --j) {
+            frame(i, j , 0) = color.red();
+            frame(i, j , 1) = color.green();
+            frame(i, j , 2) = color.blue();
+        }
+    }
+
+    copy_Image = frame;
+    QImage qImage(frame.imageData, frame.width, frame.height, frame.width * 3, QImage::Format_RGB888);
+    QPixmap img = QPixmap::fromImage(qImage);
+    int w = ui->AfterLabel->width();
+    int h = ui->AfterLabel->height();
+    ui->AfterLabel->setPixmap(img.scaled(w, h, Qt::KeepAspectRatio));
+}
+
+
+void MainWindow::on_designTwoFrameBtn_clicked()
+{
+    QColor color  = QColorDialog::getColor("Select color 1");
+    QColor color2  = QColorDialog::getColor("Select color 2");
+    Image frame = image;
+    int frameWidth = frame.width/70;
+    int frameHeight = frame.width/70;
+    for (int i = frameWidth*3; i < frame.width/2 - frameWidth; ++i) {
+        for (int j = frameHeight*2; j < frameHeight*3; ++j) {
+            frame(i, j , 0) = color.red();
+            frame(i, j , 1) = color.green();
+            frame(i, j , 2) = color.blue();
+        }
+    }
+    for (int i = frameWidth*3; i < frameWidth*4; ++i) {
+        for (int j = frameHeight*3; j < frame.height/2 - frameHeight; ++j) {
+            frame(i, j , 0) = color.red();
+            frame(i, j , 1) = color.green();
+            frame(i, j , 2) = color.blue();
+        }
+    }
+    for (int i = frame.width-frameWidth*3; i > frame.width - frameWidth*4; --i) {
+        for (int j = frame.height/2 + frameHeight; j < frame.height - frameHeight*2; ++j) {
+            frame(i, j , 0) = color.red();
+            frame(i, j , 1) = color.green();
+            frame(i, j , 2) = color.blue();
+        }
+    }
+    for (int i = frame.width/2 + frameWidth ; i < frame.width-frameWidth*3; ++i) {
+        for (int j = frame.height - frameHeight*2; j > frame.height - frameHeight*3; --j) {
+            frame(i, j , 0) = color.red();
+            frame(i, j , 1) = color.green();
+            frame(i, j , 2) = color.blue();
+        }
+    }
+
+
+
+    for (int i = frameWidth; i < frame.width/2 - frameWidth*4; ++i) {
+        for (int j = frameWidth*4; j < frameWidth*5; ++j) {
+            frame(i, j , 0) = color2.red();
+            frame(i, j , 1) = color2.green();
+            frame(i, j , 2) = color2.blue();
+        }
+    }
+    for (int i = frameWidth; i < frameWidth*2; ++i) {
+        for (int j = frameWidth*4; j < frame.height/2; ++j) {
+            frame(i, j , 0) = color2.red();
+            frame(i, j , 1) = color2.green();
+            frame(i, j , 2) = color2.blue();
+        }
+    }
+    for (int i = frame.width-frameWidth; i > frame.width - frameWidth*2; --i) {
+        for (int j = frame.height/2 + frameWidth*2; j < frame.height-frameWidth*4; ++j) {
+            frame(i, j , 0) = color2.red();
+            frame(i, j , 1) = color2.green();
+            frame(i, j , 2) = color2.blue();
+        }
+    }
+    for (int i = frame.width/2 + frameWidth*4; i < frame.width-frameWidth; ++i) {
+        for (int j = frame.height - frameWidth*4; j > frame.height - frameWidth*5; --j) {
+            frame(i, j , 0) = color2.red();
+            frame(i, j , 1) = color2.green();
+            frame(i, j , 2) = color2.blue();
+        }
+    }
+
+    copy_Image = frame;
+    QImage qImage(frame.imageData, frame.width, frame.height, frame.width * 3, QImage::Format_RGB888);
+    QPixmap img = QPixmap::fromImage(qImage);
+    int w = ui->AfterLabel->width();
+    int h = ui->AfterLabel->height();
+    ui->AfterLabel->setPixmap(img.scaled(w, h, Qt::KeepAspectRatio));
+}
+
+
+void MainWindow::on_designOneFrameBtn_clicked()
+{
+    QColor color  = QColorDialog::getColor("Select color 1");
+    Image frame = image;
+    int frameWidth = frame.width/70;
+    int frameHeight = frame.width/70;
+    for (int i = frameWidth*3; i < frame.width/2 - frameWidth; ++i) {
+        for (int j = frameHeight*2; j < frameHeight*3; ++j) {
+            frame(i, j , 0) = color.red();
+            frame(i, j , 1) = color.green();
+            frame(i, j , 2) = color.blue();
+        }
+    }
+    for (int i = frameWidth*3; i < frameWidth*4; ++i) {
+        for (int j = frameHeight*3; j < frame.height/2 - frameHeight; ++j) {
+            frame(i, j , 0) = color.red();
+            frame(i, j , 1) = color.green();
+            frame(i, j , 2) = color.blue();
+        }
+    }
+    for (int i = frame.width-frameWidth*3; i > frame.width - frameWidth*4; --i) {
+        for (int j = frame.height/2 + frameHeight; j < frame.height - frameHeight*2; ++j) {
+            frame(i, j , 0) = color.red();
+            frame(i, j , 1) = color.green();
+            frame(i, j , 2) = color.blue();
+        }
+    }
+    for (int i = frame.width/2 + frameWidth ; i < frame.width-frameWidth*3; ++i) {
+        for (int j = frame.height - frameHeight*2; j > frame.height - frameHeight*3; --j) {
+            frame(i, j , 0) = color.red();
+            frame(i, j , 1) = color.green();
+            frame(i, j , 2) = color.blue();
+        }
+    }
+
+
+
+    for (int i = frameWidth; i < frame.width/2 - frameWidth*4; ++i) {
+        for (int j = frameWidth*4; j < frameWidth*5; ++j) {
+            frame(i, j , 0) = color.red();
+            frame(i, j , 1) = color.green();
+            frame(i, j , 2) = color.blue();
+        }
+    }
+    for (int i = frameWidth; i < frameWidth*2; ++i) {
+        for (int j = frameWidth*4; j < frame.height/2; ++j) {
+            frame(i, j , 0) = color.red();
+            frame(i, j , 1) = color.green();
+            frame(i, j , 2) = color.blue();
+        }
+    }
+    for (int i = frame.width-frameWidth; i > frame.width - frameWidth*2; --i) {
+        for (int j = frame.height/2 + frameWidth*2; j < frame.height-frameWidth*4; ++j) {
+            frame(i, j , 0) = color.red();
+            frame(i, j , 1) = color.green();
+            frame(i, j , 2) = color.blue();
+        }
+    }
+    for (int i = frame.width/2 + frameWidth*4; i < frame.width-frameWidth; ++i) {
+        for (int j = frame.height - frameWidth*4; j > frame.height - frameWidth*5; --j) {
+            frame(i, j , 0) = color.red();
+            frame(i, j , 1) = color.green();
+            frame(i, j , 2) = color.blue();
+        }
+    }
+
+    copy_Image = frame;
+    QImage qImage(frame.imageData, frame.width, frame.height, frame.width * 3, QImage::Format_RGB888);
+    QPixmap img = QPixmap::fromImage(qImage);
+    int w = ui->AfterLabel->width();
+    int h = ui->AfterLabel->height();
+    ui->AfterLabel->setPixmap(img.scaled(w, h, Qt::KeepAspectRatio));
+}
+
+
+void MainWindow::on_fancyFrameBtn_clicked()
+{
+    Image frame = image;
+    QColor color  = QColorDialog::getColor("Select color 1");
+    QColor color2  = QColorDialog::getColor("Select color 2");
+
+    for (int i = frame.width/70; i < frame.width - frame.width/70; ++i) {
+        for (int j = frame.width/70; j < (frame.width/70)*2.5; ++j) {
+            if (j%2==0 && i%2==0){
+                frame(i, j , 0) = color.red();
+                frame(i, j , 1) = color.green();
+                frame(i, j , 2) = color.blue();
+            }else{
+                frame(i, j , 0) = color2.red();
+                frame(i, j , 1) = color2.green();
+                frame(i, j , 2) = color2.blue();
+            }
+        }
+    }
+    for (int i = frame.width/70; i < (frame.width/70)*2.5; ++i) {
+        for (int j = frame.width/70; j < frame.height - frame.width/70; ++j) {
+            if (j%2==0 && i%2==0){
+                frame(i, j , 0) = color.red();
+                frame(i, j , 1) = color.green();
+                frame(i, j , 2) = color.blue();
+            }else{
+                frame(i, j , 0) = color2.red();
+                frame(i, j , 1) = color2.green();
+                frame(i, j , 2) = color2.blue();
+            }
+        }
+    }
+    for (int i = frame.width-frame.width/70-1; i > frame.width - (frame.width/70)*2.5; --i) {
+        for (int j = frame.width/70; j < frame.height - (frame.width/70)*2; ++j) {
+            if (j%2==0 && i%2==0){
+                frame(i, j , 0) = color.red();
+                frame(i, j , 1) = color.green();
+                frame(i, j , 2) = color.blue();
+            }else{
+                frame(i, j , 0) = color2.red();
+                frame(i, j , 1) = color2.green();
+                frame(i, j , 2) = color2.blue();
+            }
+        }
+    }
+    for (int i = frame.width/70; i < frame.width - (frame.width/70); ++i) {
+        for (int j = frame.height - (frame.width/70) -1; j > frame.height - (frame.width/70)*2.5; --j) {
+            if (j%2==0 && i%2==0){
+                frame(i, j , 0) = color.red();
+                frame(i, j , 1) = color.green();
+                frame(i, j , 2) = color.blue();
+            }else{
+                frame(i, j , 0) = color2.red();
+                frame(i, j , 1) = color2.green();
+                frame(i, j , 2) = color2.blue();
+            }
+        }
+    }
+
+    copy_Image = frame;
+    QImage qImage(frame.imageData, frame.width, frame.height, frame.width * 3, QImage::Format_RGB888);
+    QPixmap img = QPixmap::fromImage(qImage);
+    int w = ui->AfterLabel->width();
+    int h = ui->AfterLabel->height();
+    ui->AfterLabel->setPixmap(img.scaled(w, h, Qt::KeepAspectRatio));
+}
+
+
+void MainWindow::on_clearButton_clicked()
+{
+    isSkew = false;
+    isResize = false;
+    isSmoke = false;
+    isOil = false;
+    isBlur = false;
+    isBright = false;
+    isFrame = false;
+    isRotate = false;
+    isFlip = false;
+    isMerge = false;
+    isCrop = false;
+    ui->oilFrame->hide();
+    ui->BlurFrame->hide();
+    ui->cropFrame->hide();
+    ui->skewFrame->hide();
+    ui->smokeFrame->hide();
+    ui->ResizeFrame->hide();
+    ui->FrameFrame->hide();
+    ui->rotateFrame->hide();
+    ui->flipFrame->hide();
+    ui->mergeFrame->hide();
+    ui->brightFrame->hide();
+    QImage qImage(image.imageData, image.width, image.height, image.width * 3, QImage::Format_RGB888);
+    QPixmap img = QPixmap::fromImage(qImage);
+    int w = ui->AfterLabel->width();
+    int h = ui->AfterLabel->height();
+    ui->AfterLabel->setPixmap(img.scaled(w, h, Qt::KeepAspectRatio));
+}
+
+
+void MainWindow::on_smokeButton_clicked()
+{
+    isSkew = false;
+    isResize = false;
+    isOil = false;
+    isBlur = false;
+    isBright = false;
+    isFrame = false;
+    isRotate = false;
+    isFlip = false;
+    isMerge = false;
+    isCrop = false;
+    ui->oilFrame->hide();
+    ui->BlurFrame->hide();
+    ui->cropFrame->hide();
+    ui->skewFrame->hide();
+    ui->ResizeFrame->hide();
+    ui->FrameFrame->hide();
+    ui->rotateFrame->hide();
+    ui->flipFrame->hide();
+    ui->mergeFrame->hide();
+    ui->brightFrame->hide();
+    if(isSmoke){
+        ui->smokeFrame->hide();
+        isSmoke = false;
+    }else{
+        ui->smokeFrame->show();
+        isSmoke = true;
+    }
+}
+
+
+void MainWindow::on_smokeSlider_valueChanged(int value)
+{
+    Image smokeImage = image;
+    double smoke = value*0.1;
+
+
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_real_distribution<> dis(0.0, 1.0);
+
+    for (int i = 0; i < smokeImage.width; ++i) {
+        for (int j = 0; j < smokeImage.height; ++j) {
+            double values = dis(gen);
+            if (values < smoke) {
+                smokeImage(i, j, 0) = min(255, smokeImage(i, j, 0) + 50);
+                smokeImage(i, j, 1) = min(255, smokeImage(i, j, 1) + 50);
+                smokeImage(i, j, 2) = min(255, smokeImage(i, j, 2) + 50);
+            }
+        }
+    }
+
+    copy_Image = smokeImage;
+    QImage qImage(smokeImage.imageData, smokeImage.width, smokeImage.height, smokeImage.width * 3, QImage::Format_RGB888);
+    QPixmap img = QPixmap::fromImage(qImage);
+    int w = ui->AfterLabel->width();
+    int h = ui->AfterLabel->height();
+    ui->AfterLabel->setPixmap(img.scaled(w, h, Qt::KeepAspectRatio));
+}
+
+
+void MainWindow::on_glitchButton_clicked()
+{
+    isSkew = false;
+    isResize = false;
+    isOil = false;
+    isBlur = false;
+    isBright = false;
+    isFrame = false;
+    isRotate = false;
+    isFlip = false;
+    isMerge = false;
+    isSmoke = false;
+    isCrop = false;
+    ui->oilFrame->hide();
+    ui->BlurFrame->hide();
+    ui->smokeFrame->hide();
+    ui->cropFrame->hide();
+    ui->skewFrame->hide();
+    ui->ResizeFrame->hide();
+    ui->FrameFrame->hide();
+    ui->rotateFrame->hide();
+    ui->flipFrame->hide();
+    ui->mergeFrame->hide();
+    ui->brightFrame->hide();
+    Image glitch = image;
+    for (int i = 0; i < glitch.width-glitch.width/50; ++i) {
+        for (int j = 0; j < glitch.height-glitch.height/50; ++j) {
+            for (int k = 0; k < 3; ++k) {
+                glitch(i, j, k) = (glitch(i, j, k)+glitch(i+glitch.width/50, j+glitch.height/50, k))/2;
+            }
+        }
+    }
+    copy_Image = glitch;
+    QImage qImage(glitch.imageData, glitch.width, glitch.height, glitch.width * 3, QImage::Format_RGB888);
+    QPixmap img = QPixmap::fromImage(qImage);
+    int w = ui->AfterLabel->width();
+    int h = ui->AfterLabel->height();
+    ui->AfterLabel->setPixmap(img.scaled(w, h, Qt::KeepAspectRatio));
+}
+
+
+void MainWindow::on_saveImageButton_clicked()
+{
+    QString filePath = QFileDialog::getSaveFileName(nullptr, "Save Image", "", "JPG Files (*.jpg);;TGA Files (*.tga);;PNG Files (*.png);;BMP Files (*.bmp)");
+    image.saveImage(filePath.toStdString());
+    QPixmap pix1;
+    ui->AfterLabel->setText("Image");
+    ui->Beforelabel->setText("Image");
+    // Check if user canceled or selected a file
+    if (!filePath.isEmpty()) {
+        // User selected a file, filePath contains the selected file path
+
+    } else {
+        // User canceled the operation
+        qDebug() << "Operation canceled by user.";
+    }
+    Angle = 0;
+    isSkew = false;
+    isResize = false;
+    isSmoke = false;
+    isOil = false;
+    isBlur = false;
+    isBright = false;
+    isFrame = false;
+    isRotate = false;
+    isFlip = false;
+    isMerge = false;
+    isCrop = false;
+    ui->oilFrame->hide();
+    ui->BlurFrame->hide();
+    ui->cropFrame->hide();
+    ui->skewFrame->hide();
+    ui->smokeFrame->hide();
+    ui->ResizeFrame->hide();
+    ui->FrameFrame->hide();
+    ui->rotateFrame->hide();
+    ui->flipFrame->hide();
+    ui->mergeFrame->hide();
+    ui->brightFrame->hide();
 }
 

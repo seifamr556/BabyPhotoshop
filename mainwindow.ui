@@ -462,7 +462,7 @@ background-color: rgb(65, 74, 255);
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="blursButton">
+      <widget class="QPushButton" name="oilButton">
        <property name="minimumSize">
         <size>
          <width>62</width>
@@ -506,12 +506,12 @@ background-color: rgb(65, 74, 255);
 </string>
        </property>
        <property name="text">
-        <string>Blur Filter</string>
+        <string>Oil Filter</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_3">
+      <widget class="QPushButton" name="smokeButton">
        <property name="minimumSize">
         <size>
          <width>62</width>
@@ -555,7 +555,7 @@ background-color: rgb(65, 74, 255);
 </string>
        </property>
        <property name="text">
-        <string>Gray Filter</string>
+        <string>Smoke Filter</string>
        </property>
       </widget>
      </item>
@@ -947,7 +947,7 @@ background-color: rgb(65, 74, 255);
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="oilButton">
+      <widget class="QPushButton" name="blurBtn">
        <property name="minimumSize">
         <size>
          <width>62</width>
@@ -991,12 +991,12 @@ background-color: rgb(65, 74, 255);
 </string>
        </property>
        <property name="text">
-        <string>Oil Filter</string>
+        <string>Blur Filter</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_28">
+      <widget class="QPushButton" name="frameButton">
        <property name="minimumSize">
         <size>
          <width>62</width>
@@ -1040,12 +1040,12 @@ background-color: rgb(65, 74, 255);
 </string>
        </property>
        <property name="text">
-        <string>Gray Filter</string>
+        <string>Frame Filter</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_29">
+      <widget class="QPushButton" name="glitchButton">
        <property name="minimumSize">
         <size>
          <width>62</width>
@@ -1089,7 +1089,7 @@ background-color: rgb(65, 74, 255);
 </string>
        </property>
        <property name="text">
-        <string>Gray Filter</string>
+        <string>Glitch Filter</string>
        </property>
       </widget>
      </item>
@@ -1112,7 +1112,7 @@ background-color: rgb(65, 74, 255);
     <property name="styleSheet">
      <string notr="true">border-style: solid;
 color: rgb(255, 255, 255);
-  border-width: 2px;
+  border-width: 0.5px;
   border-color: rgb(65, 74, 255);
 </string>
     </property>
@@ -1140,7 +1140,7 @@ color: rgb(255, 255, 255);
     <property name="styleSheet">
      <string notr="true">border-style: solid;
 color: rgb(255, 255, 255);
-  border-width: 2px;
+  border-width: 0.5px;
   border-color: rgb(65, 74, 255);
 </string>
     </property>
@@ -1154,7 +1154,7 @@ color: rgb(255, 255, 255);
    <widget class="QPushButton" name="FiltersButton">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>50</x>
       <y>40</y>
       <width>155</width>
       <height>30</height>
@@ -1368,7 +1368,7 @@ background-color: rgb(65, 74, 255);
 </string>
     </property>
     <property name="text">
-     <string>Done</string>
+     <string>Save</string>
     </property>
    </widget>
    <widget class="QFrame" name="skewFrame">
@@ -1517,7 +1517,7 @@ background-color: rgb(65, 74, 255);
     <property name="geometry">
      <rect>
       <x>920</x>
-      <y>620</y>
+      <y>600</y>
       <width>271</width>
       <height>20</height>
      </rect>
@@ -1526,7 +1526,7 @@ background-color: rgb(65, 74, 255);
      <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>Note: You need to click Done button to save Filter</string>
+     <string>Note: You need to click Save button to save Filter</string>
     </property>
    </widget>
    <widget class="QFrame" name="ResizeFrame">
@@ -2293,6 +2293,550 @@ background-color: rgb(65, 74, 255);
      </property>
     </widget>
    </widget>
+   <widget class="QProgressBar" name="progressBar">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>300</y>
+      <width>221</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+   <widget class="QFrame" name="oilFrame">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>550</y>
+      <width>381</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QSlider" name="radiusOilSlider">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>10</y>
+       <width>160</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <number>5</number>
+     </property>
+     <property name="pageStep">
+      <number>1</number>
+     </property>
+     <property name="value">
+      <number>0</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QSlider" name="intensitySlider">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>40</y>
+       <width>160</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <number>5</number>
+     </property>
+     <property name="singleStep">
+      <number>1</number>
+     </property>
+     <property name="pageStep">
+      <number>1</number>
+     </property>
+     <property name="value">
+      <number>0</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>49</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Radius: </string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>intensity Levels:</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="applyOilBtn">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>20</y>
+       <width>91</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>62</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial Black</family>
+       <pointsize>-1</pointsize>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+  border: 1px solid #0077CC;
+  border-radius: 4px;
+background-color: rgb(65, 74, 255);
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  direction: ltr;
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -.022em;
+  line-height: 1.47059;
+  min-width: 30px;
+  overflow: visible;
+  padding: 4px 15px;
+  text-align: center;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+</string>
+     </property>
+     <property name="text">
+      <string>Apply</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="FrameFrame">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>550</y>
+      <width>501</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="simpleOneFrameBtn">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>151</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>62</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial Black</family>
+       <pointsize>-1</pointsize>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+  border: 1px solid #0077CC;
+  border-radius: 4px;
+background-color: rgb(65, 74, 255);
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  direction: ltr;
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -.022em;
+  line-height: 1.47059;
+  min-width: 30px;
+  overflow: visible;
+  padding: 4px 15px;
+  text-align: center;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+</string>
+     </property>
+     <property name="text">
+      <string>Simple one color</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="simpleTwoFrameBtn">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>10</y>
+       <width>151</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>62</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial Black</family>
+       <pointsize>-1</pointsize>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+  border: 1px solid #0077CC;
+  border-radius: 4px;
+background-color: rgb(65, 74, 255);
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  direction: ltr;
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -.022em;
+  line-height: 1.47059;
+  min-width: 30px;
+  overflow: visible;
+  padding: 4px 15px;
+  text-align: center;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+</string>
+     </property>
+     <property name="text">
+      <string>Simple two color</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="designOneFrameBtn">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>151</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>62</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial Black</family>
+       <pointsize>-1</pointsize>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+  border: 1px solid #0077CC;
+  border-radius: 4px;
+background-color: rgb(65, 74, 255);
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  direction: ltr;
+  display: block;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: -.022em;
+  line-height: 1.47059;
+  min-width: 30px;
+  overflow: visible;
+  padding: 4px 15px;
+  text-align: center;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+</string>
+     </property>
+     <property name="text">
+      <string>Designed one color</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="designTwoFrameBtn">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>50</y>
+       <width>151</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>62</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial Black</family>
+       <pointsize>-1</pointsize>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+  border: 1px solid #0077CC;
+  border-radius: 4px;
+background-color: rgb(65, 74, 255);
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  direction: ltr;
+  display: block;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: -.022em;
+  line-height: 1.47059;
+  min-width: 30px;
+  overflow: visible;
+  padding: 4px 15px;
+  text-align: center;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+</string>
+     </property>
+     <property name="text">
+      <string>Designed two color</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="fancyFrameBtn">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>30</y>
+       <width>151</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>62</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial Black</family>
+       <pointsize>-1</pointsize>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+  border: 1px solid #0077CC;
+  border-radius: 4px;
+background-color: rgb(65, 74, 255);
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  direction: ltr;
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -.022em;
+  line-height: 1.47059;
+  min-width: 30px;
+  overflow: visible;
+  padding: 4px 15px;
+  text-align: center;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+</string>
+     </property>
+     <property name="text">
+      <string>Fancy</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="clearButton">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>40</y>
+      <width>155</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>62</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Black</family>
+      <pointsize>-1</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+  border: 1px solid #0077CC;
+  border-radius: 4px;
+background-color: rgb(65, 74, 255);
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  direction: ltr;
+  display: block;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -.022em;
+  line-height: 1.47059;
+  min-width: 30px;
+  overflow: visible;
+  padding: 4px 15px;
+  text-align: center;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+</string>
+    </property>
+    <property name="text">
+     <string>Clear</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="smokeFrame">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>550</y>
+      <width>361</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QSlider" name="smokeSlider">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>20</y>
+       <width>160</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <number>10</number>
+     </property>
+     <property name="pageStep">
+      <number>1</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </widget>
    <zorder>cropFrame</zorder>
    <zorder>FiltersGroup_2</zorder>
    <zorder>FiltersGroup_1</zorder>
@@ -2310,6 +2854,11 @@ background-color: rgb(65, 74, 255);
    <zorder>flipFrame</zorder>
    <zorder>mergeFrame</zorder>
    <zorder>BlurFrame</zorder>
+   <zorder>progressBar</zorder>
+   <zorder>oilFrame</zorder>
+   <zorder>FrameFrame</zorder>
+   <zorder>clearButton</zorder>
+   <zorder>smokeFrame</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

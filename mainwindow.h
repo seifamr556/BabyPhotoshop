@@ -76,11 +76,33 @@ private slots:
 
     void on_blurSlider_valueChanged(int value);
 
-    void on_blurButton_clicked();
+    void on_blurBtn_clicked();
 
     void on_oilButton_clicked();
 
-    void on_blursButton_clicked();
+    void on_applyOilBtn_clicked();
+
+    void on_frameButton_clicked();
+
+    void on_simpleTwoFrameBtn_clicked();
+
+    void on_simpleOneFrameBtn_clicked();
+
+    void on_designTwoFrameBtn_clicked();
+
+    void on_designOneFrameBtn_clicked();
+
+    void on_fancyFrameBtn_clicked();
+
+    void on_clearButton_clicked();
+
+    void on_smokeButton_clicked();
+
+    void on_smokeSlider_valueChanged(int value);
+
+    void on_glitchButton_clicked();
+
+    void on_saveImageButton_clicked();
 
 private:
     Ui::MainWindow *ui;
