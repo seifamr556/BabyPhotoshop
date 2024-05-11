@@ -104,6 +104,14 @@ private slots:
 
     void on_saveImageButton_clicked();
 
+    void on_compareButton_pressed();
+
+    void on_compareButton_released();
+
+    void on_undoBtn_clicked();
+
+    void on_redoBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

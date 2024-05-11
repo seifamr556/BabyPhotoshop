@@ -6,29 +6,29 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1200</width>
+    <width>1350</width>
     <height>700</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1200</width>
+    <width>1350</width>
     <height>700</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1200</width>
+    <width>1350</width>
     <height>700</height>
    </size>
   </property>
   <property name="font">
    <font>
-    <pointsize>14</pointsize>
+    <pointsize>7</pointsize>
    </font>
   </property>
   <property name="windowTitle">
-   <string>Photoshop</string>
+   <string>Pix Mix</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(29, 29, 29);</string>
@@ -37,9 +37,9 @@
    <widget class="QGroupBox" name="FiltersGroup_2">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>20</x>
       <y>90</y>
-      <width>171</width>
+      <width>141</width>
       <height>541</height>
      </rect>
     </property>
@@ -77,14 +77,14 @@
       <widget class="QPushButton" name="grayButton">
        <property name="minimumSize">
         <size>
-         <width>62</width>
+         <width>64</width>
          <height>30</height>
         </size>
        </property>
        <property name="font">
         <font>
          <family>Arial Black</family>
-         <pointsize>13</pointsize>
+         <pointsize>9</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -94,14 +94,10 @@
        </property>
        <property name="styleSheet">
         <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
@@ -109,8 +105,6 @@ background-color: rgb(65, 74, 255);
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  -webkit-user-select: none;
-  white-space: nowrap;
 </string>
        </property>
        <property name="text">
@@ -122,14 +116,13 @@ background-color: rgb(65, 74, 255);
       <widget class="QPushButton" name="invertButton">
        <property name="minimumSize">
         <size>
-         <width>62</width>
+         <width>64</width>
          <height>30</height>
         </size>
        </property>
        <property name="font">
         <font>
          <family>Arial Black</family>
-         <pointsize>-1</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -139,27 +132,17 @@ background-color: rgb(65, 74, 255);
        </property>
        <property name="styleSheet">
         <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 17px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
        </property>
        <property name="text">
@@ -171,14 +154,13 @@ background-color: rgb(65, 74, 255);
       <widget class="QPushButton" name="infraredButton">
        <property name="minimumSize">
         <size>
-         <width>62</width>
+         <width>64</width>
          <height>30</height>
         </size>
        </property>
        <property name="font">
         <font>
          <family>Arial Black</family>
-         <pointsize>-1</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -188,27 +170,17 @@ background-color: rgb(65, 74, 255);
        </property>
        <property name="styleSheet">
         <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 15px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
        </property>
        <property name="text">
@@ -220,14 +192,13 @@ background-color: rgb(65, 74, 255);
       <widget class="QPushButton" name="skewButton">
        <property name="minimumSize">
         <size>
-         <width>62</width>
+         <width>64</width>
          <height>30</height>
         </size>
        </property>
        <property name="font">
         <font>
          <family>Arial Black</family>
-         <pointsize>-1</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -237,27 +208,17 @@ background-color: rgb(65, 74, 255);
        </property>
        <property name="styleSheet">
         <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 17px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
        </property>
        <property name="text">
@@ -269,14 +230,13 @@ background-color: rgb(65, 74, 255);
       <widget class="QPushButton" name="purpleButton">
        <property name="minimumSize">
         <size>
-         <width>62</width>
+         <width>64</width>
          <height>30</height>
         </size>
        </property>
        <property name="font">
         <font>
          <family>Arial Black</family>
-         <pointsize>-1</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -286,27 +246,17 @@ background-color: rgb(65, 74, 255);
        </property>
        <property name="styleSheet">
         <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 17px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
        </property>
        <property name="text">
@@ -318,14 +268,14 @@ background-color: rgb(65, 74, 255);
       <widget class="QPushButton" name="brightnessButton">
        <property name="minimumSize">
         <size>
-         <width>62</width>
+         <width>64</width>
          <height>30</height>
         </size>
        </property>
        <property name="font">
         <font>
          <family>Arial Black</family>
-         <pointsize>-1</pointsize>
+         <pointsize>7</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -335,27 +285,17 @@ background-color: rgb(65, 74, 255);
        </property>
        <property name="styleSheet">
         <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 14px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
        </property>
        <property name="text">
@@ -367,14 +307,13 @@ background-color: rgb(65, 74, 255);
       <widget class="QPushButton" name="mergeButton">
        <property name="minimumSize">
         <size>
-         <width>62</width>
+         <width>64</width>
          <height>30</height>
         </size>
        </property>
        <property name="font">
         <font>
          <family>Arial Black</family>
-         <pointsize>-1</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -384,27 +323,17 @@ background-color: rgb(65, 74, 255);
        </property>
        <property name="styleSheet">
         <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 17px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
        </property>
        <property name="text">
@@ -416,14 +345,13 @@ background-color: rgb(65, 74, 255);
       <widget class="QPushButton" name="cropButton">
        <property name="minimumSize">
         <size>
-         <width>62</width>
+         <width>64</width>
          <height>30</height>
         </size>
        </property>
        <property name="font">
         <font>
          <family>Arial Black</family>
-         <pointsize>-1</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -433,27 +361,17 @@ background-color: rgb(65, 74, 255);
        </property>
        <property name="styleSheet">
         <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 17px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
        </property>
        <property name="text">
@@ -465,14 +383,13 @@ background-color: rgb(65, 74, 255);
       <widget class="QPushButton" name="oilButton">
        <property name="minimumSize">
         <size>
-         <width>62</width>
+         <width>64</width>
          <height>30</height>
         </size>
        </property>
        <property name="font">
         <font>
          <family>Arial Black</family>
-         <pointsize>-1</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -482,27 +399,17 @@ background-color: rgb(65, 74, 255);
        </property>
        <property name="styleSheet">
         <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 17px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
        </property>
        <property name="text">
@@ -514,14 +421,13 @@ background-color: rgb(65, 74, 255);
       <widget class="QPushButton" name="smokeButton">
        <property name="minimumSize">
         <size>
-         <width>62</width>
+         <width>64</width>
          <height>30</height>
         </size>
        </property>
        <property name="font">
         <font>
          <family>Arial Black</family>
-         <pointsize>-1</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -531,27 +437,17 @@ background-color: rgb(65, 74, 255);
        </property>
        <property name="styleSheet">
         <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 17px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
        </property>
        <property name="text">
@@ -564,9 +460,9 @@ background-color: rgb(65, 74, 255);
    <widget class="QGroupBox" name="FiltersGroup_1">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>160</x>
       <y>90</y>
-      <width>171</width>
+      <width>141</width>
       <height>541</height>
      </rect>
     </property>
@@ -607,14 +503,13 @@ background-color: rgb(65, 74, 255);
       <widget class="QPushButton" name="BaWButton">
        <property name="minimumSize">
         <size>
-         <width>62</width>
+         <width>64</width>
          <height>30</height>
         </size>
        </property>
        <property name="font">
         <font>
          <family>Arial Black</family>
-         <pointsize>-1</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -624,27 +519,17 @@ background-color: rgb(65, 74, 255);
        </property>
        <property name="styleSheet">
         <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 17px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
        </property>
        <property name="text">
@@ -656,14 +541,13 @@ background-color: rgb(65, 74, 255);
       <widget class="QPushButton" name="sunButton">
        <property name="minimumSize">
         <size>
-         <width>62</width>
+         <width>64</width>
          <height>30</height>
         </size>
        </property>
        <property name="font">
         <font>
          <family>Arial Black</family>
-         <pointsize>-1</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -673,27 +557,17 @@ background-color: rgb(65, 74, 255);
        </property>
        <property name="styleSheet">
         <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 15px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
        </property>
        <property name="text">
@@ -705,14 +579,13 @@ background-color: rgb(65, 74, 255);
       <widget class="QPushButton" name="TVButton">
        <property name="minimumSize">
         <size>
-         <width>62</width>
+         <width>64</width>
          <height>30</height>
         </size>
        </property>
        <property name="font">
         <font>
          <family>Arial Black</family>
-         <pointsize>-1</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -722,27 +595,17 @@ background-color: rgb(65, 74, 255);
        </property>
        <property name="styleSheet">
         <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 17px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
        </property>
        <property name="text">
@@ -754,14 +617,13 @@ background-color: rgb(65, 74, 255);
       <widget class="QPushButton" name="resizeButton">
        <property name="minimumSize">
         <size>
-         <width>62</width>
+         <width>64</width>
          <height>30</height>
         </size>
        </property>
        <property name="font">
         <font>
          <family>Arial Black</family>
-         <pointsize>-1</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -771,27 +633,17 @@ background-color: rgb(65, 74, 255);
        </property>
        <property name="styleSheet">
         <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 17px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
        </property>
        <property name="text">
@@ -803,14 +655,13 @@ background-color: rgb(65, 74, 255);
       <widget class="QPushButton" name="rotateButton">
        <property name="minimumSize">
         <size>
-         <width>62</width>
+         <width>64</width>
          <height>30</height>
         </size>
        </property>
        <property name="font">
         <font>
          <family>Arial Black</family>
-         <pointsize>-1</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -820,27 +671,17 @@ background-color: rgb(65, 74, 255);
        </property>
        <property name="styleSheet">
         <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 17px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
        </property>
        <property name="text">
@@ -852,14 +693,13 @@ background-color: rgb(65, 74, 255);
       <widget class="QPushButton" name="flipButton">
        <property name="minimumSize">
         <size>
-         <width>62</width>
+         <width>64</width>
          <height>30</height>
         </size>
        </property>
        <property name="font">
         <font>
          <family>Arial Black</family>
-         <pointsize>-1</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -869,27 +709,17 @@ background-color: rgb(65, 74, 255);
        </property>
        <property name="styleSheet">
         <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 17px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
        </property>
        <property name="text">
@@ -901,14 +731,14 @@ background-color: rgb(65, 74, 255);
       <widget class="QPushButton" name="detectButton">
        <property name="minimumSize">
         <size>
-         <width>62</width>
+         <width>64</width>
          <height>30</height>
         </size>
        </property>
        <property name="font">
         <font>
          <family>Arial Black</family>
-         <pointsize>-1</pointsize>
+         <pointsize>7</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -918,27 +748,17 @@ background-color: rgb(65, 74, 255);
        </property>
        <property name="styleSheet">
         <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 12px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
        </property>
        <property name="text">
@@ -950,14 +770,13 @@ background-color: rgb(65, 74, 255);
       <widget class="QPushButton" name="blurBtn">
        <property name="minimumSize">
         <size>
-         <width>62</width>
+         <width>64</width>
          <height>30</height>
         </size>
        </property>
        <property name="font">
         <font>
          <family>Arial Black</family>
-         <pointsize>-1</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -967,27 +786,17 @@ background-color: rgb(65, 74, 255);
        </property>
        <property name="styleSheet">
         <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 17px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
        </property>
        <property name="text">
@@ -999,14 +808,13 @@ background-color: rgb(65, 74, 255);
       <widget class="QPushButton" name="frameButton">
        <property name="minimumSize">
         <size>
-         <width>62</width>
+         <width>64</width>
          <height>30</height>
         </size>
        </property>
        <property name="font">
         <font>
          <family>Arial Black</family>
-         <pointsize>-1</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -1016,27 +824,17 @@ background-color: rgb(65, 74, 255);
        </property>
        <property name="styleSheet">
         <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 17px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
        </property>
        <property name="text">
@@ -1048,14 +846,13 @@ background-color: rgb(65, 74, 255);
       <widget class="QPushButton" name="glitchButton">
        <property name="minimumSize">
         <size>
-         <width>62</width>
+         <width>64</width>
          <height>30</height>
         </size>
        </property>
        <property name="font">
         <font>
          <family>Arial Black</family>
-         <pointsize>-1</pointsize>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -1065,27 +862,17 @@ background-color: rgb(65, 74, 255);
        </property>
        <property name="styleSheet">
         <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 17px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
        </property>
        <property name="text">
@@ -1095,57 +882,41 @@ background-color: rgb(65, 74, 255);
      </item>
     </layout>
    </widget>
-   <widget class="QLabel" name="Beforelabel">
-    <property name="geometry">
-     <rect>
-      <x>420</x>
-      <y>90</y>
-      <width>350</width>
-      <height>450</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>18</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-style: solid;
-color: rgb(255, 255, 255);
-  border-width: 0.5px;
-  border-color: rgb(65, 74, 255);
-</string>
-    </property>
-    <property name="text">
-     <string>Image</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
    <widget class="QLabel" name="AfterLabel">
     <property name="geometry">
      <rect>
-      <x>810</x>
-      <y>90</y>
-      <width>350</width>
-      <height>450</height>
+      <x>370</x>
+      <y>100</y>
+      <width>951</width>
+      <height>471</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <pointsize>18</pointsize>
+      <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-style: solid;
-color: rgb(255, 255, 255);
-  border-width: 0.5px;
-  border-color: rgb(65, 74, 255);
+     <string notr="true">
+  border: 2px solid #0077CC;
+background:transparent;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-weight: 400;
+  letter-spacing: -.022em;
+  line-height: 1.47059;
+  min-width: 30px;
+  padding: 4px 15px;
+  text-align: center;
+  vertical-align: baseline;
 </string>
     </property>
     <property name="text">
-     <string>Image</string>
+     <string/>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -1154,22 +925,22 @@ color: rgb(255, 255, 255);
    <widget class="QPushButton" name="FiltersButton">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>30</x>
       <y>40</y>
-      <width>155</width>
+      <width>121</width>
       <height>30</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>62</width>
+      <width>64</width>
       <height>30</height>
      </size>
     </property>
     <property name="font">
      <font>
       <family>Arial Black</family>
-      <pointsize>-1</pointsize>
+      <pointsize>11</pointsize>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -1179,27 +950,17 @@ color: rgb(255, 255, 255);
     </property>
     <property name="styleSheet">
      <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 17px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
     </property>
     <property name="text">
@@ -1209,7 +970,7 @@ background-color: rgb(65, 74, 255);
    <widget class="QPushButton" name="saveImageButton">
     <property name="geometry">
      <rect>
-      <x>1010</x>
+      <x>1126</x>
       <y>40</y>
       <width>155</width>
       <height>30</height>
@@ -1217,14 +978,13 @@ background-color: rgb(65, 74, 255);
     </property>
     <property name="minimumSize">
      <size>
-      <width>62</width>
+      <width>64</width>
       <height>30</height>
      </size>
     </property>
     <property name="font">
      <font>
       <family>Arial Black</family>
-      <pointsize>-1</pointsize>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -1234,27 +994,17 @@ background-color: rgb(65, 74, 255);
     </property>
     <property name="styleSheet">
      <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 17px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
     </property>
     <property name="text">
@@ -1264,7 +1014,7 @@ background-color: rgb(65, 74, 255);
    <widget class="QPushButton" name="loadImageButton">
     <property name="geometry">
      <rect>
-      <x>840</x>
+      <x>960</x>
       <y>40</y>
       <width>155</width>
       <height>30</height>
@@ -1272,14 +1022,13 @@ background-color: rgb(65, 74, 255);
     </property>
     <property name="minimumSize">
      <size>
-      <width>62</width>
+      <width>64</width>
       <height>30</height>
      </size>
     </property>
     <property name="font">
      <font>
       <family>Arial Black</family>
-      <pointsize>-1</pointsize>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -1289,27 +1038,17 @@ background-color: rgb(65, 74, 255);
     </property>
     <property name="styleSheet">
      <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 17px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
     </property>
     <property name="text">
@@ -1319,22 +1058,22 @@ background-color: rgb(65, 74, 255);
    <widget class="QPushButton" name="doneBtn">
     <property name="geometry">
      <rect>
-      <x>1010</x>
-      <y>560</y>
+      <x>1166</x>
+      <y>610</y>
       <width>155</width>
       <height>30</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>62</width>
+      <width>64</width>
       <height>30</height>
      </size>
     </property>
     <property name="font">
      <font>
       <family>Arial Black</family>
-      <pointsize>-1</pointsize>
+      <pointsize>11</pointsize>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -1344,38 +1083,28 @@ background-color: rgb(65, 74, 255);
     </property>
     <property name="styleSheet">
      <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 17px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
     </property>
     <property name="text">
-     <string>Save</string>
+     <string>Apply</string>
     </property>
    </widget>
    <widget class="QFrame" name="skewFrame">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>550</y>
+      <x>380</x>
+      <y>580</y>
       <width>351</width>
       <height>80</height>
      </rect>
@@ -1460,22 +1189,21 @@ background-color: rgb(65, 74, 255);
     <widget class="QPushButton" name="applySkewBtn">
      <property name="geometry">
       <rect>
-       <x>180</x>
+       <x>240</x>
        <y>40</y>
-       <width>91</width>
+       <width>81</width>
        <height>30</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>62</width>
+       <width>64</width>
        <height>30</height>
       </size>
      </property>
      <property name="font">
       <font>
        <family>Arial Black</family>
-       <pointsize>-1</pointsize>
        <italic>false</italic>
        <bold>false</bold>
       </font>
@@ -1485,27 +1213,17 @@ background-color: rgb(65, 74, 255);
      </property>
      <property name="styleSheet">
       <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 14px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
      </property>
      <property name="text">
@@ -1516,8 +1234,8 @@ background-color: rgb(65, 74, 255);
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>920</x>
-      <y>600</y>
+      <x>1060</x>
+      <y>650</y>
       <width>271</width>
       <height>20</height>
      </rect>
@@ -1532,8 +1250,8 @@ background-color: rgb(65, 74, 255);
    <widget class="QFrame" name="ResizeFrame">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>550</y>
+      <x>380</x>
+      <y>580</y>
       <width>351</width>
       <height>80</height>
      </rect>
@@ -1613,14 +1331,13 @@ background-color: rgb(65, 74, 255);
      </property>
      <property name="minimumSize">
       <size>
-       <width>62</width>
+       <width>64</width>
        <height>30</height>
       </size>
      </property>
      <property name="font">
       <font>
        <family>Arial Black</family>
-       <pointsize>-1</pointsize>
        <italic>false</italic>
        <bold>false</bold>
       </font>
@@ -1630,27 +1347,17 @@ background-color: rgb(65, 74, 255);
      </property>
      <property name="styleSheet">
       <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 14px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
      </property>
      <property name="text">
@@ -1661,8 +1368,8 @@ background-color: rgb(65, 74, 255);
    <widget class="QFrame" name="rotateFrame">
     <property name="geometry">
      <rect>
-      <x>690</x>
-      <y>550</y>
+      <x>370</x>
+      <y>580</y>
       <width>81</width>
       <height>51</height>
      </rect>
@@ -1678,20 +1385,19 @@ background-color: rgb(65, 74, 255);
       <rect>
        <x>10</x>
        <y>10</y>
-       <width>62</width>
+       <width>64</width>
        <height>30</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>62</width>
+       <width>64</width>
        <height>30</height>
       </size>
      </property>
      <property name="font">
       <font>
        <family>Arial Black</family>
-       <pointsize>-1</pointsize>
        <italic>false</italic>
        <bold>false</bold>
       </font>
@@ -1701,27 +1407,17 @@ background-color: rgb(65, 74, 255);
      </property>
      <property name="styleSheet">
       <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 17px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
      </property>
      <property name="text">
@@ -1741,8 +1437,8 @@ background-color: rgb(65, 74, 255);
    <widget class="QFrame" name="brightFrame">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>550</y>
+      <x>380</x>
+      <y>580</y>
       <width>351</width>
       <height>41</height>
      </rect>
@@ -1766,8 +1462,11 @@ background-color: rgb(65, 74, 255);
       <string notr="true">color: rgb(0, 0, 255);
 alternate-background-color: rgb(0, 0, 255);</string>
      </property>
+     <property name="minimum">
+      <number>1</number>
+     </property>
      <property name="maximum">
-      <number>8</number>
+      <number>80</number>
      </property>
      <property name="singleStep">
       <number>1</number>
@@ -1776,7 +1475,7 @@ alternate-background-color: rgb(0, 0, 255);</string>
       <number>1</number>
      </property>
      <property name="value">
-      <number>2</number>
+      <number>10</number>
      </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -1786,8 +1485,8 @@ alternate-background-color: rgb(0, 0, 255);</string>
    <widget class="QFrame" name="flipFrame">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>550</y>
+      <x>380</x>
+      <y>580</y>
       <width>351</width>
       <height>71</height>
      </rect>
@@ -1809,14 +1508,13 @@ alternate-background-color: rgb(0, 0, 255);</string>
      </property>
      <property name="minimumSize">
       <size>
-       <width>62</width>
+       <width>64</width>
        <height>30</height>
       </size>
      </property>
      <property name="font">
       <font>
        <family>Arial Black</family>
-       <pointsize>-1</pointsize>
        <italic>false</italic>
        <bold>false</bold>
       </font>
@@ -1826,27 +1524,17 @@ alternate-background-color: rgb(0, 0, 255);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 17px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
      </property>
      <property name="text">
@@ -1864,14 +1552,13 @@ background-color: rgb(65, 74, 255);
      </property>
      <property name="minimumSize">
       <size>
-       <width>62</width>
+       <width>64</width>
        <height>30</height>
       </size>
      </property>
      <property name="font">
       <font>
        <family>Arial Black</family>
-       <pointsize>-1</pointsize>
        <italic>false</italic>
        <bold>false</bold>
       </font>
@@ -1881,39 +1568,31 @@ background-color: rgb(65, 74, 255);
      </property>
      <property name="styleSheet">
       <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 17px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
      </property>
      <property name="text">
       <string>Horizontal</string>
      </property>
     </widget>
+    <zorder>HFlipBtn</zorder>
+    <zorder>VFlipBtn</zorder>
    </widget>
    <widget class="QFrame" name="mergeFrame">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>550</y>
+      <x>370</x>
+      <y>580</y>
       <width>381</width>
       <height>80</height>
      </rect>
@@ -1938,14 +1617,13 @@ background-color: rgb(65, 74, 255);
      </property>
      <property name="minimumSize">
       <size>
-       <width>62</width>
+       <width>64</width>
        <height>30</height>
       </size>
      </property>
      <property name="font">
       <font>
        <family>Arial Black</family>
-       <pointsize>-1</pointsize>
        <italic>false</italic>
        <bold>false</bold>
       </font>
@@ -1955,27 +1633,17 @@ background-color: rgb(65, 74, 255);
      </property>
      <property name="styleSheet">
       <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 14px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
      </property>
      <property name="text">
@@ -2029,14 +1697,13 @@ background-color: rgb(65, 74, 255);
      </property>
      <property name="minimumSize">
       <size>
-       <width>62</width>
+       <width>64</width>
        <height>30</height>
       </size>
      </property>
      <property name="font">
       <font>
        <family>Arial Black</family>
-       <pointsize>-1</pointsize>
        <italic>false</italic>
        <bold>false</bold>
       </font>
@@ -2046,27 +1713,17 @@ background-color: rgb(65, 74, 255);
      </property>
      <property name="styleSheet">
       <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 14px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
      </property>
      <property name="text">
@@ -2077,10 +1734,10 @@ background-color: rgb(65, 74, 255);
    <widget class="QFrame" name="cropFrame">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>550</y>
+      <x>380</x>
+      <y>580</y>
       <width>381</width>
-      <height>71</height>
+      <height>91</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -2200,21 +1857,20 @@ background-color: rgb(65, 74, 255);
      <property name="geometry">
       <rect>
        <x>270</x>
-       <y>20</y>
+       <y>10</y>
        <width>91</width>
        <height>30</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>62</width>
+       <width>64</width>
        <height>30</height>
       </size>
      </property>
      <property name="font">
       <font>
        <family>Arial Black</family>
-       <pointsize>-1</pointsize>
        <italic>false</italic>
        <bold>false</bold>
       </font>
@@ -2224,39 +1880,55 @@ background-color: rgb(65, 74, 255);
      </property>
      <property name="styleSheet">
       <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 14px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
      </property>
      <property name="text">
       <string>Apply</string>
      </property>
     </widget>
+    <widget class="QLabel" name="imageWidth">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="imageHeight">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>70</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QFrame" name="BlurFrame">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>560</y>
+      <x>370</x>
+      <y>580</y>
       <width>381</width>
       <height>61</height>
      </rect>
@@ -2296,7 +1968,7 @@ background-color: rgb(65, 74, 255);
    <widget class="QProgressBar" name="progressBar">
     <property name="geometry">
      <rect>
-      <x>680</x>
+      <x>700</x>
       <y>300</y>
       <width>221</width>
       <height>23</height>
@@ -2312,8 +1984,8 @@ background-color: rgb(65, 74, 255);
    <widget class="QFrame" name="oilFrame">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>550</y>
+      <x>370</x>
+      <y>580</y>
       <width>381</width>
       <height>80</height>
      </rect>
@@ -2411,14 +2083,13 @@ background-color: rgb(65, 74, 255);
      </property>
      <property name="minimumSize">
       <size>
-       <width>62</width>
+       <width>64</width>
        <height>30</height>
       </size>
      </property>
      <property name="font">
       <font>
        <family>Arial Black</family>
-       <pointsize>-1</pointsize>
        <italic>false</italic>
        <bold>false</bold>
       </font>
@@ -2428,27 +2099,17 @@ background-color: rgb(65, 74, 255);
      </property>
      <property name="styleSheet">
       <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 14px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
      </property>
      <property name="text">
@@ -2459,8 +2120,8 @@ background-color: rgb(65, 74, 255);
    <widget class="QFrame" name="FrameFrame">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>550</y>
+      <x>370</x>
+      <y>580</y>
       <width>501</width>
       <height>91</height>
      </rect>
@@ -2482,14 +2143,13 @@ background-color: rgb(65, 74, 255);
      </property>
      <property name="minimumSize">
       <size>
-       <width>62</width>
+       <width>64</width>
        <height>30</height>
       </size>
      </property>
      <property name="font">
       <font>
        <family>Arial Black</family>
-       <pointsize>-1</pointsize>
        <italic>false</italic>
        <bold>false</bold>
       </font>
@@ -2499,27 +2159,17 @@ background-color: rgb(65, 74, 255);
      </property>
      <property name="styleSheet">
       <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 12px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
      </property>
      <property name="text">
@@ -2537,14 +2187,13 @@ background-color: rgb(65, 74, 255);
      </property>
      <property name="minimumSize">
       <size>
-       <width>62</width>
+       <width>64</width>
        <height>30</height>
       </size>
      </property>
      <property name="font">
       <font>
        <family>Arial Black</family>
-       <pointsize>-1</pointsize>
        <italic>false</italic>
        <bold>false</bold>
       </font>
@@ -2554,27 +2203,17 @@ background-color: rgb(65, 74, 255);
      </property>
      <property name="styleSheet">
       <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 12px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
      </property>
      <property name="text">
@@ -2592,14 +2231,14 @@ background-color: rgb(65, 74, 255);
      </property>
      <property name="minimumSize">
       <size>
-       <width>62</width>
+       <width>64</width>
        <height>30</height>
       </size>
      </property>
      <property name="font">
       <font>
        <family>Arial Black</family>
-       <pointsize>-1</pointsize>
+       <pointsize>8</pointsize>
        <italic>false</italic>
        <bold>false</bold>
       </font>
@@ -2609,27 +2248,17 @@ background-color: rgb(65, 74, 255);
      </property>
      <property name="styleSheet">
       <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 10px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
      </property>
      <property name="text">
@@ -2647,14 +2276,14 @@ background-color: rgb(65, 74, 255);
      </property>
      <property name="minimumSize">
       <size>
-       <width>62</width>
+       <width>64</width>
        <height>30</height>
       </size>
      </property>
      <property name="font">
       <font>
        <family>Arial Black</family>
-       <pointsize>-1</pointsize>
+       <pointsize>8</pointsize>
        <italic>false</italic>
        <bold>false</bold>
       </font>
@@ -2664,27 +2293,17 @@ background-color: rgb(65, 74, 255);
      </property>
      <property name="styleSheet">
       <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 10px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
      </property>
      <property name="text">
@@ -2696,20 +2315,20 @@ background-color: rgb(65, 74, 255);
       <rect>
        <x>340</x>
        <y>30</y>
-       <width>151</width>
+       <width>121</width>
        <height>30</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>62</width>
+       <width>64</width>
        <height>30</height>
       </size>
      </property>
      <property name="font">
       <font>
        <family>Arial Black</family>
-       <pointsize>-1</pointsize>
+       <pointsize>11</pointsize>
        <italic>false</italic>
        <bold>false</bold>
       </font>
@@ -2719,27 +2338,17 @@ background-color: rgb(65, 74, 255);
      </property>
      <property name="styleSheet">
       <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 14px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
      </property>
      <property name="text">
@@ -2750,22 +2359,22 @@ background-color: rgb(65, 74, 255);
    <widget class="QPushButton" name="clearButton">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>170</x>
       <y>40</y>
-      <width>155</width>
-      <height>30</height>
+      <width>121</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>62</width>
+      <width>64</width>
       <height>30</height>
      </size>
     </property>
     <property name="font">
      <font>
       <family>Arial Black</family>
-      <pointsize>-1</pointsize>
+      <pointsize>9</pointsize>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -2775,27 +2384,17 @@ background-color: rgb(65, 74, 255);
     </property>
     <property name="styleSheet">
      <string notr="true">
-  border: 1px solid #0077CC;
-  border-radius: 4px;
-background-color: rgb(65, 74, 255);
-  box-sizing: border-box;
+  border: 2px solid #0077CC;
+background:transparent;
   color: #FFFFFF;
   cursor: pointer;
-  direction: ltr;
-  display: block;
-  font-size: 17px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
   min-width: 30px;
-  overflow: visible;
   padding: 4px 15px;
   text-align: center;
   vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
 </string>
     </property>
     <property name="text">
@@ -2805,8 +2404,8 @@ background-color: rgb(65, 74, 255);
    <widget class="QFrame" name="smokeFrame">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>550</y>
+      <x>370</x>
+      <y>580</y>
       <width>361</width>
       <height>51</height>
      </rect>
@@ -2837,40 +2436,172 @@ background-color: rgb(65, 74, 255);
      </property>
     </widget>
    </widget>
-   <zorder>cropFrame</zorder>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>30</y>
+      <width>571</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>42</pointsize>
+      <italic>true</italic>
+      <bold>true</bold>
+      <underline>true</underline>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 119, 204);</string>
+    </property>
+    <property name="text">
+     <string>Pix Mix</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="compareButton">
+    <property name="geometry">
+     <rect>
+      <x>369</x>
+      <y>103</y>
+      <width>951</width>
+      <height>461</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:transparent;
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="undoBtn">
+    <property name="geometry">
+     <rect>
+      <x>930</x>
+      <y>610</y>
+      <width>101</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>64</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Black</family>
+      <pointsize>11</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+  border: 2px solid #0077CC;
+background:transparent;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-weight: 400;
+  letter-spacing: -.022em;
+  line-height: 1.47059;
+  min-width: 30px;
+  padding: 4px 15px;
+  text-align: center;
+  vertical-align: baseline;
+</string>
+    </property>
+    <property name="text">
+     <string>Undo</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="redoBtn">
+    <property name="geometry">
+     <rect>
+      <x>1040</x>
+      <y>610</y>
+      <width>101</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>64</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Black</family>
+      <pointsize>11</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+  border: 2px solid #0077CC;
+background:transparent;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-weight: 400;
+  letter-spacing: -.022em;
+  line-height: 1.47059;
+  min-width: 30px;
+  padding: 4px 15px;
+  text-align: center;
+  vertical-align: baseline;
+</string>
+    </property>
+    <property name="text">
+     <string>Redo</string>
+    </property>
+   </widget>
    <zorder>FiltersGroup_2</zorder>
    <zorder>FiltersGroup_1</zorder>
-   <zorder>Beforelabel</zorder>
-   <zorder>AfterLabel</zorder>
    <zorder>FiltersButton</zorder>
    <zorder>saveImageButton</zorder>
    <zorder>loadImageButton</zorder>
    <zorder>doneBtn</zorder>
-   <zorder>skewFrame</zorder>
    <zorder>label_2</zorder>
-   <zorder>ResizeFrame</zorder>
    <zorder>rotateFrame</zorder>
    <zorder>brightFrame</zorder>
-   <zorder>flipFrame</zorder>
    <zorder>mergeFrame</zorder>
    <zorder>BlurFrame</zorder>
-   <zorder>progressBar</zorder>
-   <zorder>oilFrame</zorder>
    <zorder>FrameFrame</zorder>
    <zorder>clearButton</zorder>
    <zorder>smokeFrame</zorder>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1200</width>
-     <height>21</height>
-    </rect>
-   </property>
+   <zorder>ResizeFrame</zorder>
+   <zorder>oilFrame</zorder>
+   <zorder>cropFrame</zorder>
+   <zorder>flipFrame</zorder>
+   <zorder>AfterLabel</zorder>
+   <zorder>label_11</zorder>
+   <zorder>progressBar</zorder>
+   <zorder>skewFrame</zorder>
+   <zorder>compareButton</zorder>
+   <zorder>undoBtn</zorder>
+   <zorder>redoBtn</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionwelcome">
+   <property name="text">
+    <string>welcome</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
